@@ -63,7 +63,7 @@ python merge_moe_lora.py --save ${new_model_name} --path ${saved_checkpoint_path
 ```
 
 ### Acknowledgments
-Our codebase is heavily inspired by and leverages parts of the [Parameter-Efficient-MoE](https://github.com/wuhy68/Parameter-Efficient-MoE) repository. We are grateful to the authors for providing a robust starting point for our research in MoCE.
+Our codebase leverages parts of the [Parameter-Efficient-MoE](https://github.com/wuhy68/Parameter-Efficient-MoE) repository. We are grateful to the authors for providing a robust starting point for our research in MoCE.
 
 ## License
 The source code in this repo is licensed under the [Apache 2.0 License](https://github.com/sugyeonge/MoCE/blob/master/LICENSE).
